@@ -44,14 +44,16 @@ function App() {
      {
       return boardToCheck[a]
     } 
-// si no hay ganador  retorna vacio
-    return null;
-  }}
+
+  } 
+  // si no hay ganador  retorna vacio
+  return null;}
+  
   const updateBoard = (index) => {
 
     // si hay algo en esa posicion
     // entonces no sobre escribas
-    if(board[index] ||winner) return
+    if(board[index] || winner) return
 
 // puedes utilizr structuredClone para una clonancion mas profunda.
    const newBoard = [...board] // una clonacion superficial de nuestra prop
@@ -92,6 +94,30 @@ function App() {
           {TURNS.o}
         </Square>
       </section>
+
+      {
+        winner != null && (
+          <section className='winner'>
+            <div className='text'>
+              <h2>
+                {
+                  winner === false 
+                  ? 'Empate' 
+                  : 'Gano'
+                }
+              </h2>
+
+              <header className='win'>
+                {winner && <Square>{winner}</Square>}
+              </header>
+
+              <footer>
+                <button>Empezar de nuevo</button>
+              </footer>
+            </div>
+          </section>
+        )
+      }
     </main>
   )
 }
