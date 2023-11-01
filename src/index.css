@@ -54,8 +54,9 @@ body {
 }
 
 .board button:hover {
-  background: #eee;
-  color: #222;
+  background: #c319da;
+  
+  border: 2px solid #c919e0;
 }
 
 .board .game {
@@ -81,11 +82,11 @@ body {
   border-color: transparent;
 }
 
+
 .square.is-selected {
   color: #eee;
-  background: rgb(34, 202, 231);
+  background-color: rgb(105, 30, 226);
 }
-
 .winner {
   position: absolute;
   width: 100vw;
@@ -128,4 +129,11 @@ body {
   place-items: center;
   cursor: pointer;
   font-size: 48px;
+
+}
+
+.square:hover{
+  
+    box-shadow: inset 1px 1px 6px 3px #e8e4e4;
+
 }
